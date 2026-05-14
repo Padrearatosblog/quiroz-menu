@@ -1,3 +1,5 @@
+/* css/styles.css */
+
 *{
   margin:0;
   padding:0;
@@ -110,6 +112,40 @@ body{
   color:#d4a25a;
   font-weight:600;
   white-space:nowrap;
+}
+
+.allergens{
+  margin-top:8px;
+  font-size:0.78rem !important;
+  color:#d4a25a !important;
+  opacity:0.9;
+  line-height:1.4;
+}
+
+.allergen-box{
+  margin-top:60px;
+  padding:25px;
+  border:1px solid rgba(212,162,90,0.25);
+  border-radius:20px;
+  background:rgba(255,255,255,0.03);
+}
+
+.allergen-box h2{
+  font-family:'Cormorant Garamond',serif;
+  font-size:2rem;
+  color:#d4a25a;
+  margin-bottom:15px;
+}
+
+.allergen-box p{
+  color:#f5eee6;
+  line-height:1.6;
+  margin-bottom:12px;
+}
+
+.allergen-box small{
+  color:#b9b0a7;
+  line-height:1.5;
 }
 
 @media(max-width:768px){

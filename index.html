@@ -1,3 +1,5 @@
+<!-- index.html -->
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -32,12 +34,14 @@
   <main class="menu-container">
 
     <section class="menu-section">
+
       <h2 id="starters-title">Entrantes</h2>
 
       <div class="menu-item">
         <div>
           <h3 id="starter1-name">Croquetas caseras</h3>
           <p id="starter1-desc">Cremosas y elaboradas diariamente</p>
+          <p class="allergens" id="starter1-allergens"></p>
         </div>
         <span>8€</span>
       </div>
@@ -46,18 +50,22 @@
         <div>
           <h3 id="starter2-name">Tabla Navarra</h3>
           <p id="starter2-desc">Selección de quesos y embutidos</p>
+          <p class="allergens" id="starter2-allergens"></p>
         </div>
         <span>14€</span>
       </div>
+
     </section>
 
     <section class="menu-section">
+
       <h2 id="main-title">Principales</h2>
 
       <div class="menu-item">
         <div>
           <h3 id="main1-name">Solomillo premium</h3>
           <p id="main1-desc">Con reducción de vino tinto</p>
+          <p class="allergens" id="main1-allergens"></p>
         </div>
         <span>24€</span>
       </div>
@@ -66,18 +74,22 @@
         <div>
           <h3 id="main2-name">Bacalao confitado</h3>
           <p id="main2-desc">Con crema suave de pimientos</p>
+          <p class="allergens" id="main2-allergens"></p>
         </div>
         <span>22€</span>
       </div>
+
     </section>
 
     <section class="menu-section">
+
       <h2 id="dessert-title">Postres</h2>
 
       <div class="menu-item">
         <div>
           <h3 id="dessert1-name">Tarta de queso</h3>
           <p id="dessert1-desc">Horneada al estilo tradicional</p>
+          <p class="allergens" id="dessert1-allergens"></p>
         </div>
         <span>7€</span>
       </div>
@@ -86,13 +98,28 @@
         <div>
           <h3 id="dessert2-name">Coulant de chocolate</h3>
           <p id="dessert2-desc">Con helado artesanal</p>
+          <p class="allergens" id="dessert2-allergens"></p>
         </div>
         <span>8€</span>
       </div>
+
+    </section>
+
+    <section class="allergen-box">
+
+      <h2 id="allergens-title">Alérgenos</h2>
+
+      <p id="allergens-list"></p>
+
+      <small id="allergen-notice">
+        Consulta con nuestro personal si tienes alguna intolerancia o alergia alimentaria.
+      </small>
+
     </section>
 
   </main>
 
   <script src="js/script.js"></script>
+
 </body>
 </html>

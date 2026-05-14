@@ -1,6 +1,9 @@
+// js/script.js
+
 const translations = {
 
   es: {
+
     starters: "Entrantes",
     main: "Principales",
     desserts: "Postres",
@@ -21,10 +24,21 @@ const translations = {
     dessert1Desc: "Horneada al estilo tradicional",
 
     dessert2: "Coulant de chocolate",
-    dessert2Desc: "Con helado artesanal"
+    dessert2Desc: "Con helado artesanal",
+
+    allergensTitle: "Alérgenos",
+
+    allergenNotice: "Consulta con nuestro personal si tienes alguna intolerancia o alergia alimentaria.",
+
+    gluten: "Gluten",
+    dairy: "Lácteos",
+    egg: "Huevo",
+    fish: "Pescado",
+    nuts: "Frutos secos"
   },
 
   en: {
+
     starters: "Starters",
     main: "Main Courses",
     desserts: "Desserts",
@@ -45,10 +59,21 @@ const translations = {
     dessert1Desc: "Traditional baked style",
 
     dessert2: "Chocolate coulant",
-    dessert2Desc: "With artisan ice cream"
+    dessert2Desc: "With artisan ice cream",
+
+    allergensTitle: "Allergens",
+
+    allergenNotice: "Please ask our staff if you have any food allergy or intolerance.",
+
+    gluten: "Gluten",
+    dairy: "Dairy",
+    egg: "Egg",
+    fish: "Fish",
+    nuts: "Nuts"
   },
 
   fr: {
+
     starters: "Entrées",
     main: "Plats principaux",
     desserts: "Desserts",
@@ -69,7 +94,17 @@ const translations = {
     dessert1Desc: "Cuit au style traditionnel",
 
     dessert2: "Coulant au chocolat",
-    dessert2Desc: "Avec glace artisanale"
+    dessert2Desc: "Avec glace artisanale",
+
+    allergensTitle: "Allergènes",
+
+    allergenNotice: "Veuillez consulter notre personnel en cas d’allergie ou d’intolérance alimentaire.",
+
+    gluten: "Gluten",
+    dairy: "Produits laitiers",
+    egg: "Œuf",
+    fish: "Poisson",
+    nuts: "Fruits à coque"
   }
 
 };
@@ -98,4 +133,33 @@ function changeLanguage(lang){
   document.getElementById("dessert2-name").textContent = translations[lang].dessert2;
   document.getElementById("dessert2-desc").textContent = translations[lang].dessert2Desc;
 
+  document.getElementById("starter1-allergens").textContent =
+  `🌾 ${translations[lang].gluten} · 🥛 ${translations[lang].dairy} · 🥚 ${translations[lang].egg}`;
+
+  document.getElementById("starter2-allergens").textContent =
+  `🥛 ${translations[lang].dairy}`;
+
+  document.getElementById("main1-allergens").textContent =
+  `🥛 ${translations[lang].dairy}`;
+
+  document.getElementById("main2-allergens").textContent =
+  `🐟 ${translations[lang].fish}`;
+
+  document.getElementById("dessert1-allergens").textContent =
+  `🌾 ${translations[lang].gluten} · 🥛 ${translations[lang].dairy} · 🥚 ${translations[lang].egg}`;
+
+  document.getElementById("dessert2-allergens").textContent =
+  `🌾 ${translations[lang].gluten} · 🥛 ${translations[lang].dairy} · 🥚 ${translations[lang].egg}`;
+
+  document.getElementById("allergens-title").textContent =
+  translations[lang].allergensTitle;
+
+  document.getElementById("allergens-list").textContent =
+  `🌾 ${translations[lang].gluten} · 🥛 ${translations[lang].dairy} · 🥚 ${translations[lang].egg} · 🐟 ${translations[lang].fish} · 🥜 ${translations[lang].nuts}`;
+
+  document.getElementById("allergen-notice").textContent =
+  translations[lang].allergenNotice;
+
 }
+
+changeLanguage('es');
