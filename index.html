@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Quiroz | Cocina Navarra</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <header class="hero">
+    <div class="overlay"></div>
+
+    <div class="hero-content">
+      <h1>QUIROZ</h1>
+      <p>Cocina Navarra</p>
+
+      <div class="lang-buttons">
+        <button onclick="changeLanguage('es')">ES</button>
+        <button onclick="changeLanguage('en')">EN</button>
+        <button onclick="changeLanguage('fr')">FR</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="menu-container">
+
+    <section class="menu-section">
+      <h2 id="starters-title">Entrantes</h2>
+
+      <div class="menu-item">
+        <div>
+          <h3 id="starter1-name">Croquetas caseras</h3>
+          <p id="starter1-desc">Cremosas y elaboradas diariamente</p>
+        </div>
+        <span>8€</span>
+      </div>
+
+      <div class="menu-item">
+        <div>
+          <h3 id="starter2-name">Tabla Navarra</h3>
+          <p id="starter2-desc">Selección de quesos y embutidos</p>
+        </div>
+        <span>14€</span>
+      </div>
+    </section>
+
+    <section class="menu-section">
+      <h2 id="main-title">Principales</h2>
+
+      <div class="menu-item">
+        <div>
+          <h3 id="main1-name">Solomillo premium</h3>
+          <p id="main1-desc">Con reducción de vino tinto</p>
+        </div>
+        <span>24€</span>
+      </div>
+
+      <div class="menu-item">
+        <div>
+          <h3 id="main2-name">Bacalao confitado</h3>
+          <p id="main2-desc">Con crema suave de pimientos</p>
+        </div>
+        <span>22€</span>
+      </div>
+    </section>
+
+    <section class="menu-section">
+      <h2 id="dessert-title">Postres</h2>
+
+      <div class="menu-item">
+        <div>
+          <h3 id="dessert1-name">Tarta de queso</h3>
+          <p id="dessert1-desc">Horneada al estilo tradicional</p>
+        </div>
+        <span>7€</span>
+      </div>
+
+      <div class="menu-item">
+        <div>
+          <h3 id="dessert2-name">Coulant de chocolate</h3>
+          <p id="dessert2-desc">Con helado artesanal</p>
+        </div>
+        <span>8€</span>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
