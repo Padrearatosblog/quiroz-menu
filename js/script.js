@@ -1,165 +1,376 @@
-// js/script.js
-
 const translations = {
-
   es: {
+    heroLabel: "SAN FERMÍN · PAMPLONA",
+    heroSubtitle: "Almuerzos · Menú del día · Carta",
+    heroText: "Puedes pedir indicando el número del plato.",
 
-    starters: "Entrantes",
-    main: "Principales",
-    desserts: "Postres",
+    navBreakfast: "Almuerzos",
+    navDaily: "Menú del día",
+    navMenu: "Carta",
+    navMenuHours: "18:00 — cierre",
 
-    starter1: "Croquetas caseras",
-    starter1Desc: "Cremosas y elaboradas diariamente",
+    breakfastTitle: "Almuerzos San Fermín",
+    dailyTitle: "Menú del día",
+    dailyNote: "Incluye primero, segundo, postre, pan y bebida.",
+    menuTitle: "Carta",
+    menuHours: "18:00 — cierre",
 
-    starter2: "Tabla Navarra",
-    starter2Desc: "Selección de quesos y embutidos",
-
-    main1: "Solomillo premium",
-    main1Desc: "Con reducción de vino tinto",
-
-    main2: "Bacalao confitado",
-    main2Desc: "Con crema suave de pimientos",
-
-    dessert1: "Tarta de queso",
-    dessert1Desc: "Horneada al estilo tradicional",
-
-    dessert2: "Coulant de chocolate",
-    dessert2Desc: "Con helado artesanal",
-
+    infoLabel: "Info",
     allergensTitle: "Alérgenos",
+    allergenWarning: "Consulta con nuestro personal si tienes alguna alergia o intolerancia alimentaria.",
+    footerText: "Carta digital San Fermín · ES / EN / FR",
 
-    allergenNotice: "Consulta con nuestro personal si tienes alguna intolerancia o alergia alimentaria.",
+    allergensList: "🌾 Gluten · 🥛 Lácteos · 🥚 Huevo · 🐟 Pescado · 🥜 Frutos secos",
 
     gluten: "Gluten",
     dairy: "Lácteos",
     egg: "Huevo",
     fish: "Pescado",
-    nuts: "Frutos secos"
+    nuts: "Frutos secos",
+    vegetarian: "Vegetariano",
+
+    breakfastItems: [
+      {
+        number: "01",
+        name: "Bocadillo de txistorra",
+        desc: "Pan crujiente con txistorra navarra a la plancha.",
+        info: "La txistorra es un embutido típico de Navarra y País Vasco, muy popular durante fiestas y almuerzos.",
+        allergens: ["gluten"],
+        price: "6,50€"
+      },
+      {
+        number: "02",
+        name: "Huevos con jamón",
+        desc: "Huevos fritos acompañados de jamón serrano y patatas.",
+        info: "Uno de los almuerzos más tradicionales y pedidos durante San Fermín.",
+        allergens: ["egg"],
+        price: "9,50€"
+      }
+    ],
+
+    dailyItems: [
+      {
+        number: "11",
+        name: "Pochas navarras",
+        desc: "Alubias blancas tiernas cocinadas lentamente con verduras frescas.",
+        info: "Las pochas son uno de los platos más típicos de Navarra y suelen servirse durante verano.",
+        allergens: ["vegetarian"],
+        price: "Menú"
+      },
+      {
+        number: "12",
+        name: "Lubina estilo Orio",
+        desc: "Lubina a la parrilla terminada con salsa tradicional vasca de ajo, aceite, vinagre y guindilla.",
+        info: "El estilo Orio es una preparación típica del País Vasco, muy utilizada en pescados a la brasa.",
+        allergens: ["fish"],
+        price: "Menú"
+      }
+    ],
+
+    menuItems: [
+      {
+        number: "21",
+        name: "Croquetas caseras",
+        desc: "Croquetas cremosas elaboradas diariamente.",
+        info: "Uno de los platos más clásicos para compartir en bares y restaurantes españoles.",
+        allergens: ["gluten", "dairy", "egg"],
+        price: "8€"
+      },
+      {
+        number: "22",
+        name: "Solomillo premium",
+        desc: "Solomillo acompañado de reducción de vino tinto y guarnición.",
+        info: "Carne tierna cocinada al punto y servida con una salsa reducida de vino.",
+        allergens: ["dairy"],
+        price: "24€"
+      },
+      {
+        number: "23",
+        name: "Coulant de chocolate",
+        desc: "Bizcocho templado de chocolate con interior fundido y helado artesanal.",
+        info: "Postre francés muy popular servido caliente con centro líquido de chocolate.",
+        allergens: ["gluten", "dairy", "egg"],
+        price: "8€"
+      }
+    ]
   },
 
   en: {
+    heroLabel: "SAN FERMIN · PAMPLONA",
+    heroSubtitle: "Breakfast · Daily Menu · À la carte",
+    heroText: "You can order by indicating the dish number.",
 
-    starters: "Starters",
-    main: "Main Courses",
-    desserts: "Desserts",
+    navBreakfast: "Breakfast",
+    navDaily: "Daily Menu",
+    navMenu: "Menu",
+    navMenuHours: "18:00 — close",
 
-    starter1: "Homemade croquettes",
-    starter1Desc: "Creamy and freshly prepared",
+    breakfastTitle: "San Fermín Breakfast",
+    dailyTitle: "Daily Menu",
+    dailyNote: "Includes starter, main course, dessert, bread and drink.",
+    menuTitle: "À la carte",
+    menuHours: "18:00 — close",
 
-    starter2: "Navarra board",
-    starter2Desc: "Selection of cheeses and cured meats",
-
-    main1: "Premium sirloin",
-    main1Desc: "With red wine reduction",
-
-    main2: "Confit cod",
-    main2Desc: "With roasted pepper cream",
-
-    dessert1: "Cheesecake",
-    dessert1Desc: "Traditional baked style",
-
-    dessert2: "Chocolate coulant",
-    dessert2Desc: "With artisan ice cream",
-
+    infoLabel: "Info",
     allergensTitle: "Allergens",
+    allergenWarning: "Please ask our staff if you have any food allergy or intolerance.",
+    footerText: "San Fermín digital menu · ES / EN / FR",
 
-    allergenNotice: "Please ask our staff if you have any food allergy or intolerance.",
+    allergensList: "🌾 Gluten · 🥛 Dairy · 🥚 Egg · 🐟 Fish · 🥜 Nuts",
 
     gluten: "Gluten",
     dairy: "Dairy",
     egg: "Egg",
     fish: "Fish",
-    nuts: "Nuts"
+    nuts: "Nuts",
+    vegetarian: "Vegetarian",
+
+    breakfastItems: [
+      {
+        number: "01",
+        name: "Txistorra sandwich",
+        desc: "Crispy bread with grilled Navarra txistorra sausage.",
+        info: "Txistorra is a traditional sausage from Navarra and the Basque Country, very popular during festivals and breakfasts.",
+        allergens: ["gluten"],
+        price: "€6.50"
+      },
+      {
+        number: "02",
+        name: "Eggs with ham",
+        desc: "Fried eggs served with serrano ham and potatoes.",
+        info: "One of the most traditional and popular breakfasts during San Fermín.",
+        allergens: ["egg"],
+        price: "€9.50"
+      }
+    ],
+
+    dailyItems: [
+      {
+        number: "11",
+        name: "Navarra pochas",
+        desc: "Tender white beans slowly cooked with fresh vegetables.",
+        info: "Pochas are one of Navarra’s most traditional dishes and are usually served during summer.",
+        allergens: ["vegetarian"],
+        price: "Menu"
+      },
+      {
+        number: "12",
+        name: "Sea bass Orio style",
+        desc: "Grilled sea bass finished with a traditional Basque sauce made with garlic, oil, vinegar and chilli.",
+        info: "Orio style is a traditional Basque preparation commonly used for grilled fish.",
+        allergens: ["fish"],
+        price: "Menu"
+      }
+    ],
+
+    menuItems: [
+      {
+        number: "21",
+        name: "Homemade croquettes",
+        desc: "Creamy croquettes prepared daily.",
+        info: "One of the most classic dishes to share in Spanish bars and restaurants.",
+        allergens: ["gluten", "dairy", "egg"],
+        price: "€8"
+      },
+      {
+        number: "22",
+        name: "Premium sirloin",
+        desc: "Sirloin served with red wine reduction and garnish.",
+        info: "Tender meat cooked to order and served with a reduced wine sauce.",
+        allergens: ["dairy"],
+        price: "€24"
+      },
+      {
+        number: "23",
+        name: "Chocolate coulant",
+        desc: "Warm chocolate cake with a molten centre and artisan ice cream.",
+        info: "A very popular French dessert served warm with a liquid chocolate centre.",
+        allergens: ["gluten", "dairy", "egg"],
+        price: "€8"
+      }
+    ]
   },
 
   fr: {
+    heroLabel: "SAN FERMIN · PAMPELUNE",
+    heroSubtitle: "Petit-déjeuner · Menu du jour · Carte",
+    heroText: "Vous pouvez commander en indiquant le numéro du plat.",
 
-    starters: "Entrées",
-    main: "Plats principaux",
-    desserts: "Desserts",
+    navBreakfast: "Petit-déjeuner",
+    navDaily: "Menu du jour",
+    navMenu: "Carte",
+    navMenuHours: "18:00 — fermeture",
 
-    starter1: "Croquettes maison",
-    starter1Desc: "Crémeuses et préparées chaque jour",
+    breakfastTitle: "Petit-déjeuner San Fermín",
+    dailyTitle: "Menu du jour",
+    dailyNote: "Comprend entrée, plat principal, dessert, pain et boisson.",
+    menuTitle: "Carte",
+    menuHours: "18:00 — fermeture",
 
-    starter2: "Planche navarraise",
-    starter2Desc: "Sélection de fromages et charcuteries",
-
-    main1: "Filet premium",
-    main1Desc: "Avec réduction de vin rouge",
-
-    main2: "Morue confite",
-    main2Desc: "Avec crème de poivrons",
-
-    dessert1: "Gâteau au fromage",
-    dessert1Desc: "Cuit au style traditionnel",
-
-    dessert2: "Coulant au chocolat",
-    dessert2Desc: "Avec glace artisanale",
-
+    infoLabel: "Info",
     allergensTitle: "Allergènes",
+    allergenWarning: "Veuillez consulter notre personnel en cas d’allergie ou d’intolérance alimentaire.",
+    footerText: "Menu digital San Fermín · ES / EN / FR",
 
-    allergenNotice: "Veuillez consulter notre personnel en cas d’allergie ou d’intolérance alimentaire.",
+    allergensList: "🌾 Gluten · 🥛 Produits laitiers · 🥚 Œuf · 🐟 Poisson · 🥜 Fruits à coque",
 
     gluten: "Gluten",
     dairy: "Produits laitiers",
     egg: "Œuf",
     fish: "Poisson",
-    nuts: "Fruits à coque"
-  }
+    nuts: "Fruits à coque",
+    vegetarian: "Végétarien",
 
+    breakfastItems: [
+      {
+        number: "01",
+        name: "Sandwich à la txistorra",
+        desc: "Pain croustillant avec txistorra navarraise grillée.",
+        info: "La txistorra est une saucisse traditionnelle de Navarre et du Pays basque, très populaire pendant les fêtes et les petits-déjeuners.",
+        allergens: ["gluten"],
+        price: "6,50€"
+      },
+      {
+        number: "02",
+        name: "Œufs au jambon",
+        desc: "Œufs frits servis avec jambon serrano et pommes de terre.",
+        info: "L’un des petits-déjeuners les plus traditionnels et demandés pendant San Fermín.",
+        allergens: ["egg"],
+        price: "9,50€"
+      }
+    ],
+
+    dailyItems: [
+      {
+        number: "11",
+        name: "Pochas navarraises",
+        desc: "Haricots blancs tendres mijotés lentement avec des légumes frais.",
+        info: "Les pochas sont l’un des plats les plus traditionnels de Navarre et sont souvent servies en été.",
+        allergens: ["vegetarian"],
+        price: "Menu"
+      },
+      {
+        number: "12",
+        name: "Bar style Orio",
+        desc: "Bar grillé terminé avec une sauce basque traditionnelle à l’ail, huile, vinaigre et piment.",
+        info: "Le style Orio est une préparation traditionnelle basque très utilisée pour les poissons grillés.",
+        allergens: ["fish"],
+        price: "Menu"
+      }
+    ],
+
+    menuItems: [
+      {
+        number: "21",
+        name: "Croquettes maison",
+        desc: "Croquettes crémeuses préparées chaque jour.",
+        info: "L’un des plats les plus classiques à partager dans les bars et restaurants espagnols.",
+        allergens: ["gluten", "dairy", "egg"],
+        price: "8€"
+      },
+      {
+        number: "22",
+        name: "Filet premium",
+        desc: "Filet servi avec réduction de vin rouge et garniture.",
+        info: "Viande tendre cuite à la demande et servie avec une sauce réduite au vin.",
+        allergens: ["dairy"],
+        price: "24€"
+      },
+      {
+        number: "23",
+        name: "Coulant au chocolat",
+        desc: "Gâteau chaud au chocolat avec cœur fondant et glace artisanale.",
+        info: "Dessert français très populaire servi chaud avec un cœur liquide au chocolat.",
+        allergens: ["gluten", "dairy", "egg"],
+        price: "8€"
+      }
+    ]
+  }
 };
 
-function changeLanguage(lang){
+const icons = {
+  gluten: "🌾",
+  dairy: "🥛",
+  egg: "🥚",
+  fish: "🐟",
+  nuts: "🥜",
+  vegetarian: "🌱"
+};
 
-  document.getElementById("starters-title").textContent = translations[lang].starters;
-  document.getElementById("main-title").textContent = translations[lang].main;
-  document.getElementById("dessert-title").textContent = translations[lang].desserts;
-
-  document.getElementById("starter1-name").textContent = translations[lang].starter1;
-  document.getElementById("starter1-desc").textContent = translations[lang].starter1Desc;
-
-  document.getElementById("starter2-name").textContent = translations[lang].starter2;
-  document.getElementById("starter2-desc").textContent = translations[lang].starter2Desc;
-
-  document.getElementById("main1-name").textContent = translations[lang].main1;
-  document.getElementById("main1-desc").textContent = translations[lang].main1Desc;
-
-  document.getElementById("main2-name").textContent = translations[lang].main2;
-  document.getElementById("main2-desc").textContent = translations[lang].main2Desc;
-
-  document.getElementById("dessert1-name").textContent = translations[lang].dessert1;
-  document.getElementById("dessert1-desc").textContent = translations[lang].dessert1Desc;
-
-  document.getElementById("dessert2-name").textContent = translations[lang].dessert2;
-  document.getElementById("dessert2-desc").textContent = translations[lang].dessert2Desc;
-
-  document.getElementById("starter1-allergens").textContent =
-  `🌾 ${translations[lang].gluten} · 🥛 ${translations[lang].dairy} · 🥚 ${translations[lang].egg}`;
-
-  document.getElementById("starter2-allergens").textContent =
-  `🥛 ${translations[lang].dairy}`;
-
-  document.getElementById("main1-allergens").textContent =
-  `🥛 ${translations[lang].dairy}`;
-
-  document.getElementById("main2-allergens").textContent =
-  `🐟 ${translations[lang].fish}`;
-
-  document.getElementById("dessert1-allergens").textContent =
-  `🌾 ${translations[lang].gluten} · 🥛 ${translations[lang].dairy} · 🥚 ${translations[lang].egg}`;
-
-  document.getElementById("dessert2-allergens").textContent =
-  `🌾 ${translations[lang].gluten} · 🥛 ${translations[lang].dairy} · 🥚 ${translations[lang].egg}`;
-
-  document.getElementById("allergens-title").textContent =
-  translations[lang].allergensTitle;
-
-  document.getElementById("allergens-list").textContent =
-  `🌾 ${translations[lang].gluten} · 🥛 ${translations[lang].dairy} · 🥚 ${translations[lang].egg} · 🐟 ${translations[lang].fish} · 🥜 ${translations[lang].nuts}`;
-
-  document.getElementById("allergen-notice").textContent =
-  translations[lang].allergenNotice;
-
+function setText(id, value){
+  document.getElementById(id).textContent = value;
 }
 
-changeLanguage('es');
+function renderAllergens(lang, allergens){
+  const t = translations[lang];
+
+  return allergens
+    .map(item => `${icons[item]} ${t[item]}`)
+    .join(" · ");
+}
+
+function renderItems(containerId, items, lang){
+  const t = translations[lang];
+  const container = document.getElementById(containerId);
+
+  container.innerHTML = `
+    <div class="items-wrapper">
+      ${items.map(item => `
+        <article class="menu-item">
+          <div class="item-content">
+            <div class="item-top">
+              <div class="item-number">${item.number}</div>
+
+              <div>
+                <h3>${item.name}</h3>
+                <p class="description">${item.desc}</p>
+
+                <div class="info-box">
+                  <strong>🌍 ${t.infoLabel}:</strong> ${item.info}
+                </div>
+
+                <small class="allergens">
+                  ${renderAllergens(lang, item.allergens)}
+                </small>
+              </div>
+            </div>
+          </div>
+
+          <span class="price">${item.price}</span>
+        </article>
+      `).join("")}
+    </div>
+  `;
+}
+
+function changeLanguage(lang){
+  const t = translations[lang];
+
+  document.documentElement.lang = lang;
+
+  setText("hero-label", t.heroLabel);
+  setText("hero-subtitle", t.heroSubtitle);
+  setText("hero-text", t.heroText);
+
+  setText("nav-breakfast", t.navBreakfast);
+  setText("nav-daily", t.navDaily);
+  setText("nav-menu", t.navMenu);
+  setText("nav-menu-hours", t.navMenuHours);
+
+  setText("breakfast-title", t.breakfastTitle);
+  setText("daily-title", t.dailyTitle);
+  setText("daily-note", t.dailyNote);
+  setText("menu-title", t.menuTitle);
+  setText("menu-hours", t.menuHours);
+
+  setText("allergens-title", t.allergensTitle);
+  setText("allergens-list", t.allergensList);
+  setText("allergen-warning", t.allergenWarning);
+  setText("footer-text", t.footerText);
+
+  renderItems("breakfast-items", t.breakfastItems, lang);
+  renderItems("daily-items", t.dailyItems, lang);
+  renderItems("menu-items", t.menuItems, lang);
+}
+
+changeLanguage("es");

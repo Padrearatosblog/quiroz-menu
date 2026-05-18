@@ -1,16 +1,15 @@
-<!-- index.html -->
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Quiroz | Cocina Navarra</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Quiroz | San Fermín</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="css/styles.css">
 </head>
@@ -20,7 +19,10 @@
     <div class="overlay"></div>
 
     <div class="hero-content">
-      
+      <p class="hero-label" id="hero-label">SAN FERMÍN · PAMPLONA</p>
+      <h1>QUIROZ</h1>
+      <p class="hero-subtitle" id="hero-subtitle">Almuerzos · Menú del día · Carta</p>
+      <p class="hero-text" id="hero-text">Puedes pedir indicando el número del plato.</p>
 
       <div class="lang-buttons">
         <button onclick="changeLanguage('es')">ES</button>
@@ -30,95 +32,72 @@
     </div>
   </header>
 
-  <main class="menu-container">
+  <section class="quick-nav">
+    <a href="#almuerzos" class="nav-card red-card">
+      <span>☀️</span>
+      <h3 id="nav-breakfast">Almuerzos</h3>
+      <p>08:00 — 14:00</p>
+    </a>
 
-    <section class="menu-section">
+    <a href="#menu-dia" class="nav-card dark-card">
+      <span>🍽️</span>
+      <h3 id="nav-daily">Menú del día</h3>
+      <p>15:00 — 18:00</p>
+    </a>
 
-      <h2 id="starters-title">Entrantes</h2>
+    <a href="#carta" class="nav-card dark-card">
+      <span>🌙</span>
+      <h3 id="nav-menu">Carta</h3>
+      <p id="nav-menu-hours">18:00 — cierre</p>
+    </a>
+  </section>
 
-      <div class="menu-item">
-        <div>
-          <h3 id="starter1-name">Croquetas caseras</h3>
-          <p id="starter1-desc">Cremosas y elaboradas diariamente</p>
-          <p class="allergens" id="starter1-allergens"></p>
-        </div>
-        <span>8€</span>
+  <main>
+
+    <section class="menu-block red-block" id="almuerzos">
+      <div class="block-header">
+        <span>08:00 — 14:00</span>
+        <h2 id="breakfast-title">Almuerzos San Fermín</h2>
       </div>
 
-      <div class="menu-item">
-        <div>
-          <h3 id="starter2-name">Tabla Navarra</h3>
-          <p id="starter2-desc">Selección de quesos y embutidos</p>
-          <p class="allergens" id="starter2-allergens"></p>
-        </div>
-        <span>14€</span>
-      </div>
-
+      <div id="breakfast-items"></div>
     </section>
 
-    <section class="menu-section">
-
-      <h2 id="main-title">Principales</h2>
-
-      <div class="menu-item">
-        <div>
-          <h3 id="main1-name">Solomillo premium</h3>
-          <p id="main1-desc">Con reducción de vino tinto</p>
-          <p class="allergens" id="main1-allergens"></p>
-        </div>
-        <span>24€</span>
+    <section class="menu-block gold-block" id="menu-dia">
+      <div class="block-header">
+        <span>15:00 — 18:00</span>
+        <h2 id="daily-title">Menú del día</h2>
       </div>
 
-      <div class="menu-item">
-        <div>
-          <h3 id="main2-name">Bacalao confitado</h3>
-          <p id="main2-desc">Con crema suave de pimientos</p>
-          <p class="allergens" id="main2-allergens"></p>
-        </div>
-        <span>22€</span>
-      </div>
+      <p class="section-note" id="daily-note">Incluye primero, segundo, postre, pan y bebida.</p>
 
+      <div id="daily-items"></div>
     </section>
 
-    <section class="menu-section">
-
-      <h2 id="dessert-title">Postres</h2>
-
-      <div class="menu-item">
-        <div>
-          <h3 id="dessert1-name">Tarta de queso</h3>
-          <p id="dessert1-desc">Horneada al estilo tradicional</p>
-          <p class="allergens" id="dessert1-allergens"></p>
-        </div>
-        <span>7€</span>
+    <section class="menu-block black-block" id="carta">
+      <div class="block-header">
+        <span id="menu-hours">18:00 — cierre</span>
+        <h2 id="menu-title">Carta</h2>
       </div>
 
-      <div class="menu-item">
-        <div>
-          <h3 id="dessert2-name">Coulant de chocolate</h3>
-          <p id="dessert2-desc">Con helado artesanal</p>
-          <p class="allergens" id="dessert2-allergens"></p>
-        </div>
-        <span>8€</span>
-      </div>
-
+      <div id="menu-items"></div>
     </section>
 
-    <section class="allergen-box">
-
+    <section class="allergen-section">
       <h2 id="allergens-title">Alérgenos</h2>
-
       <p id="allergens-list"></p>
-
-      <small id="allergen-notice">
-        Consulta con nuestro personal si tienes alguna intolerancia o alergia alimentaria.
+      <small id="allergen-warning">
+        Consulta con nuestro personal si tienes alguna alergia o intolerancia alimentaria.
       </small>
-
     </section>
+
+    <footer>
+      <h2>QUIROZ</h2>
+      <p id="footer-text">Carta digital San Fermín · ES / EN / FR</p>
+    </footer>
 
   </main>
 
   <script src="js/script.js"></script>
-
 </body>
 </html>
