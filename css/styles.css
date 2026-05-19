@@ -32,6 +32,51 @@ body{
   );
 }
 
+.topbar{
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  z-index:6;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:18px;
+  padding:24px 28px;
+}
+
+.brand{
+  font-family:'Cormorant Garamond',serif;
+  color:#fff;
+  font-size:1.35rem;
+  font-weight:700;
+  letter-spacing:4px;
+}
+
+.language-switch,
+.lang-buttons{
+  display:flex;
+  gap:10px;
+}
+
+.lang-btn,
+.lang-buttons button{
+  background:rgba(0,0,0,0.25);
+  border:1px solid #d6b071;
+  color:#d6b071;
+  padding:10px 18px;
+  border-radius:30px;
+  cursor:pointer;
+  font-weight:600;
+}
+
+.lang-btn:hover,
+.lang-btn.active,
+.lang-buttons button:hover{
+  background:#d6b071;
+  color:#111;
+}
+
 .hero-content{
   position:relative;
   z-index:2;
@@ -70,27 +115,7 @@ body{
   line-height:1.5;
 }
 
-.lang-buttons{
-  display:flex;
-  gap:10px;
-  margin-top:30px;
-}
-
-.lang-buttons button{
-  background:rgba(0,0,0,0.25);
-  border:1px solid #d6b071;
-  color:#d6b071;
-  padding:10px 18px;
-  border-radius:30px;
-  cursor:pointer;
-  font-weight:600;
-}
-
-.lang-buttons button:hover{
-  background:#d6b071;
-  color:#111;
-}
-
+.section-tabs,
 .quick-nav{
   display:grid;
   grid-template-columns:repeat(3,1fr);
@@ -99,6 +124,13 @@ body{
   margin-top:-75px;
   position:relative;
   z-index:5;
+}
+
+.tab-btn{
+  border:0;
+  text-align:left;
+  font:inherit;
+  cursor:pointer;
 }
 
 .nav-card{
@@ -111,6 +143,17 @@ body{
   flex-direction:column;
   justify-content:flex-end;
   box-shadow:0 18px 40px rgba(0,0,0,0.35);
+  transition:transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.nav-card:hover,
+.nav-card.active{
+  transform:translateY(-4px);
+  box-shadow:0 22px 46px rgba(0,0,0,0.42);
+}
+
+.nav-card.active{
+  border:1px solid rgba(214,176,113,0.7);
 }
 
 .nav-card span{
@@ -118,13 +161,15 @@ body{
   margin-bottom:12px;
 }
 
-.nav-card h3{
+.nav-card h3,
+.nav-card strong{
   font-family:'Cormorant Garamond',serif;
   font-size:1.8rem;
   font-weight:600;
 }
 
-.nav-card p{
+.nav-card p,
+.nav-card small{
   margin-top:6px;
   color:#e6e6e6;
   font-size:0.9rem;
@@ -153,6 +198,14 @@ body{
 
 .black-block{
   background:#090909;
+}
+
+.menu-section{
+  display:none;
+}
+
+.menu-section.active{
+  display:block;
 }
 
 .block-header{
@@ -327,6 +380,20 @@ footer p{
   .quick-nav{
     grid-template-columns:1fr;
     margin-top:-55px;
+  }
+
+  .topbar{
+    padding:18px 20px;
+  }
+
+  .brand{
+    font-size:1.05rem;
+    letter-spacing:3px;
+  }
+
+  .lang-btn,
+  .lang-buttons button{
+    padding:9px 12px;
   }
 
   .menu-block{

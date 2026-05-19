@@ -18,43 +18,47 @@
   <header class="hero">
     <div class="overlay"></div>
 
+    <nav class="topbar">
+      <div class="brand">QUIROZ</div>
+
+      <div class="language-switch">
+        <button class="lang-btn active" data-lang="es" onclick="changeLanguage('es')">ES</button>
+        <button class="lang-btn" data-lang="en" onclick="changeLanguage('en')">EN</button>
+        <button class="lang-btn" data-lang="fr" onclick="changeLanguage('fr')">FR</button>
+      </div>
+    </nav>
+
     <div class="hero-content">
       <p class="hero-label" id="hero-label">SAN FERMÍN · PAMPLONA</p>
       <h1>QUIROZ</h1>
       <p class="hero-subtitle" id="hero-subtitle">Almuerzos · Menú del día · Carta</p>
       <p class="hero-text" id="hero-text">Puedes pedir indicando el número del plato.</p>
-
-      <div class="lang-buttons">
-        <button onclick="changeLanguage('es')">ES</button>
-        <button onclick="changeLanguage('en')">EN</button>
-        <button onclick="changeLanguage('fr')">FR</button>
-      </div>
     </div>
   </header>
 
-  <section class="quick-nav">
-    <a href="#almuerzos" class="nav-card red-card">
-      <span>☀️</span>
-      <h3 id="nav-breakfast">Almuerzos</h3>
-      <p>08:00 — 14:00</p>
-    </a>
-
-    <a href="#menu-dia" class="nav-card dark-card">
-      <span>🍽️</span>
-      <h3 id="nav-daily">Menú del día</h3>
-      <p>15:00 — 18:00</p>
-    </a>
-
-    <a href="#carta" class="nav-card dark-card">
-      <span>🌙</span>
-      <h3 id="nav-menu">Carta</h3>
-      <p id="nav-menu-hours">18:00 — cierre</p>
-    </a>
-  </section>
-
   <main>
 
-    <section class="menu-block red-block" id="almuerzos">
+    <section class="section-tabs quick-nav">
+      <button class="tab-btn nav-card red-card active" data-section="almuerzos">
+        <span>☀️</span>
+        <strong id="nav-breakfast">Almuerzos</strong>
+        <small>08:00 — 14:00</small>
+      </button>
+
+      <button class="tab-btn nav-card dark-card" data-section="menu-dia">
+        <span>🍽️</span>
+        <strong id="nav-daily">Menú del día</strong>
+        <small>15:00 — 18:00</small>
+      </button>
+
+      <button class="tab-btn nav-card dark-card" data-section="carta">
+        <span>🌙</span>
+        <strong id="nav-menu">Carta</strong>
+        <small id="nav-menu-hours">18:00 — cierre</small>
+      </button>
+    </section>
+
+    <section class="menu-section menu-block red-block active" id="almuerzos">
       <div class="block-header">
         <span>08:00 — 14:00</span>
         <h2 id="breakfast-title">Almuerzos San Fermín</h2>
@@ -63,7 +67,7 @@
       <div id="breakfast-items"></div>
     </section>
 
-    <section class="menu-block gold-block" id="menu-dia">
+    <section class="menu-section menu-block gold-block" id="menu-dia">
       <div class="block-header">
         <span>15:00 — 18:00</span>
         <h2 id="daily-title">Menú del día</h2>
@@ -74,7 +78,7 @@
       <div id="daily-items"></div>
     </section>
 
-    <section class="menu-block black-block" id="carta">
+    <section class="menu-section menu-block black-block" id="carta">
       <div class="block-header">
         <span id="menu-hours">18:00 — cierre</span>
         <h2 id="menu-title">Carta</h2>

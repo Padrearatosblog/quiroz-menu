@@ -348,6 +348,10 @@ function changeLanguage(lang){
 
   document.documentElement.lang = lang;
 
+  document.querySelectorAll(".lang-btn").forEach(button => {
+    button.classList.toggle("active", button.dataset.lang === lang);
+  });
+
   setText("hero-label", t.heroLabel);
   setText("hero-subtitle", t.heroSubtitle);
   setText("hero-text", t.heroText);
@@ -373,4 +377,21 @@ function changeLanguage(lang){
   renderItems("menu-items", t.menuItems, lang);
 }
 
+function activateSection(sectionId){
+  document.querySelectorAll(".menu-section").forEach(section => {
+    section.classList.toggle("active", section.id === sectionId);
+  });
+
+  document.querySelectorAll(".tab-btn").forEach(button => {
+    button.classList.toggle("active", button.dataset.section === sectionId);
+  });
+}
+
+document.querySelectorAll(".tab-btn").forEach(button => {
+  button.addEventListener("click", () => {
+    activateSection(button.dataset.section);
+  });
+});
+
 changeLanguage("es");
+activateSection("almuerzos");
