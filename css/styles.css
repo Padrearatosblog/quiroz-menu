@@ -264,21 +264,21 @@ body{
 
 .item-number{
   font-family:'Cormorant Garamond',serif;
-  color:#d6b071;
-  font-size:1.8rem;
-  letter-spacing:2px;
-  min-width:42px;
+  color:#f2d192;
+  font-size:1.55rem;
+  font-weight:700;
+  letter-spacing:1px;
+  min-width:52px;
+  width:52px;
+  height:52px;
+  border:1px solid rgba(214,176,113,0.7);
+  border-radius:16px 16px 16px 4px;
+  background:linear-gradient(145deg,rgba(214,176,113,0.24),rgba(0,0,0,0.18));
+  box-shadow:0 14px 28px rgba(0,0,0,0.22), inset 0 1px 0 rgba(255,255,255,0.16);
+  display:flex;
+  align-items:center;
+  justify-content:center;
   line-height:1;
-}
-
-.item-number::after{
-  content:"";
-  display:block;
-  width:28px;
-  height:1px;
-  background:#d6b071;
-  margin-top:8px;
-  opacity:0.7;
 }
 
 .menu-item h3{
@@ -294,8 +294,47 @@ body{
   line-height:1.5;
 }
 
-.info-box{
+.info-toggle{
   margin-top:14px;
+  border:1px solid rgba(214,176,113,0.45);
+  background:rgba(214,176,113,0.08);
+  color:#d6b071;
+  border-radius:999px;
+  padding:8px 13px;
+  cursor:pointer;
+  font:inherit;
+  font-size:0.78rem;
+  font-weight:700;
+  letter-spacing:0.5px;
+  text-transform:uppercase;
+  display:inline-flex;
+  align-items:center;
+  gap:7px;
+  transition:background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.info-toggle span{
+  width:18px;
+  height:18px;
+  border-radius:50%;
+  background:#d6b071;
+  color:#111;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  font-size:0.9rem;
+  line-height:1;
+}
+
+.info-toggle:hover,
+.info-toggle.active{
+  background:#d6b071;
+  color:#111;
+  border-color:#d6b071;
+}
+
+.info-box{
+  margin-top:10px;
   padding:13px 14px;
   background:rgba(255,255,255,0.06);
   border-radius:14px;
@@ -439,7 +478,10 @@ footer p{
 
   .item-number{
     font-size:1.45rem;
-    min-width:36px;
+    min-width:46px;
+    width:46px;
+    height:46px;
+    border-radius:14px 14px 14px 4px;
   }
 
   .price{

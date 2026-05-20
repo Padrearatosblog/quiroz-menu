@@ -315,7 +315,10 @@ function renderItems(containerId, items, lang){
 
   container.innerHTML = `
     <div class="items-wrapper">
-      ${items.map(item => `
+      ${items.map((item, index) => {
+        const infoId = `${containerId}-info-${index}`;
+
+        return `
         <article class="menu-item">
           <div class="item-content">
             <div class="item-top">
@@ -325,7 +328,11 @@ function renderItems(containerId, items, lang){
                 <h3>${item.name}</h3>
                 <p class="description">${item.desc}</p>
 
-                <div class="info-box">
+                <button class="info-toggle" type="button" aria-expanded="false" aria-controls="${infoId}">
+                  <span>+</span> ${t.infoLabel}
+                </button>
+
+                <div class="info-box" id="${infoId}" hidden>
                   <strong>🌍 ${t.infoLabel}:</strong> ${item.info}
                 </div>
 
@@ -338,7 +345,8 @@ function renderItems(containerId, items, lang){
 
           <span class="price">${item.price}</span>
         </article>
-      `).join("")}
+      `;
+      }).join("")}
     </div>
   `;
 }
@@ -391,6 +399,26 @@ document.querySelectorAll(".tab-btn").forEach(button => {
   button.addEventListener("click", () => {
     activateSection(button.dataset.section);
   });
+});
+
+document.addEventListener("click", event => {
+  const button = event.target.closest(".info-toggle");
+
+  if(!button){
+    return;
+  }
+
+  const infoBox = document.getElementById(button.getAttribute("aria-controls"));
+  const isOpen = button.getAttribute("aria-expanded") === "true";
+
+  if(!infoBox){
+    return;
+  }
+
+  button.setAttribute("aria-expanded", String(!isOpen));
+  button.classList.toggle("active", !isOpen);
+  button.querySelector("span").textContent = isOpen ? "+" : "-";
+  infoBox.hidden = isOpen;
 });
 
 changeLanguage("es");
